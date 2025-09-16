@@ -50,14 +50,14 @@ const displayTree = (allPlants) => {
                 <div class="card bg-white rounded-lg shadow-lg ">
                 <img class="w-full h-60 rounded-t-xl object-cover " src="${plants.image}" alt="">
                 <div class=" p-4 ">
-                <button onclick="loadPlantDetails(${plants.id}).showModal()" class="name text-[16px] sm:text-xl lg:text-2xl  text-green-600 font-semibold">${plants.name}</button>
+                <button onclick="loadPlantDetails(${plants.id}).showModal()" class="name cursor-pointer text-[16px] sm:text-xl lg:text-2xl hover:text-blue-600 text-green-600 font-semibold">${plants.name}</button>
                 <p class="text-[10px] sm:text-[12px] lg:text-[14px] text-justify items-center line-clamp-2 mb-2">${plants.description}</p>
                 <div class="flex justify-between">
                     <h3 class="bg-blue-200 text-green-800 text-[10px] sm:text-[14px] lg:text-[16px] rounded-full p-1 ">${plants.category}</h3>
                     <p class="price font-semibold text-[10px] sm:text-[16px] lg:text-xl ">৳${plants.price}</p>
                 </div>
                 <div class=" pl-4">
-                <button class=" add-btn bg-green-600 text-white cursor-pointer font-semibold rounded-full w-[95%] h-[43px]  py-3 px-3 mt-4">Add to Cart</button>
+                <button class=" add-btn bg-green-600 hover:bg-green-400 text-white cursor-pointer font-semibold rounded-full w-[95%] h-[43px]  py-3 px-3 mt-4">Add to Cart</button>
                 </div>
                 </div>
             </div> `
@@ -90,14 +90,14 @@ const plantDisplay = (allPlant) => {
                 <div class="card bg-white rounded-lg shadow-lg ">
                 <img class="w-full h-60 rounded-t-xl object-cover " src="${plants.image}" alt="">
                 <div class=" p-4 ">
-                <button onclick="loadPlantDetails(${plants.id}).showModal()" class="name text-2xl text-green-600 font-semibold">${plants.name}</button>
+                <button onclick="loadPlantDetails(${plants.id}).showModal()" class="name cursor-pointer text-2xl hover:text-blue-600 text-green-600 font-semibold">${plants.name}</button>
                 <p class="text-[14px] text-justify items-center line-clamp-2 mb-2">${plants.description}</p>
                 <div class="flex justify-between">
                     <h3 class="bg-blue-200 text-green-800 rounded-full p-1 ">${plants.category}</h3>
                     <p class="price font-semibold lg:text-xl ">৳${plants.price}</p>
                 </div>
                 <div class=" pl-4">
-                <button class=" add-btn cursor-pointer bg-green-600 text-white  font-semibold rounded-full w-[95%] h-[43px]  py-3 px-3 mt-4">Add to Cart</button>
+                <button class=" add-btn cursor-pointer bg-green-600 hover:bg-green-400 text-white  font-semibold rounded-full w-[95%] h-[43px]  py-3 px-3 mt-4">Add to Cart</button>
                 </div>
                 </div>
             </div> `
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const name = card.querySelector(".name").innerText;
             const price = parseInt(card.querySelector(".price").innerText.slice(1));
 
-            alert('Added to Cart' + '>>>' + name + ' = ' + price + ' ')
+            alert('Added to Cart ' + '---' + name + ' =>' + price + '❓')
 
             console.log(price)
 
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
+// Active-Category
     const categories = document.getElementById("category-container");
     categories.onclick = (activeBg) => {
         if (activeBg.target.tagName === "LI") {
